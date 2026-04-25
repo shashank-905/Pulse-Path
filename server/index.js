@@ -7,7 +7,11 @@ const path = require('path');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: '*' }
+  cors: { 
+    origin: '*',
+    methods: ['GET', 'POST']
+  },
+  transports: ['websocket', 'polling']
 });
 
 app.use(cors());
@@ -53,6 +57,11 @@ const DEMO_USERS = {
   ambulance1: { password: "demo123", name: "Ambulance Driver 1" },
   driver: { password: "demo123", name: "Demo Driver" }
 };
+
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.json({ status: 'Server is running', message: 'Ambulance Emergency App Backend' });
+});
 
 app.get('/api/hospitals', (req, res) => {
   res.json(HOSPITALS);
