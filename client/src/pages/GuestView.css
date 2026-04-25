@@ -1,0 +1,151 @@
+.guest-view {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.guest-header {
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guest-header h1 {
+  font-size: 1.35rem;
+  margin-bottom: 4px;
+}
+
+.guest-header p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.guest-content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.guest-content .map-section {
+  flex: 1;
+  min-height: 400px;
+}
+
+.guest-panel {
+  width: 360px;
+  background: rgba(29, 53, 87, 0.95);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.no-emergency {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.no-emergency .status-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.no-emergency h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #06d6a0;
+}
+
+.no-emergency p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.no-emergency .sub {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.emergency-alert {
+  animation: alertIn 0.3s ease;
+}
+
+@keyframes alertIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.alert-header {
+  margin-bottom: 24px;
+}
+
+.alert-header .pulse-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #e63946;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.alert-header h2 {
+  font-size: 1.2rem;
+  color: #e63946;
+  margin-bottom: 4px;
+}
+
+.alert-header p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.lane-highlight {
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 3px solid #e63946;
+  background: rgba(230, 57, 70, 0.2);
+}
+
+.lane-highlight .lane-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.lane-highlight p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+.dest-info {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.dest-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.traffic-link {
+  color: #06d6a0;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.traffic-link:hover {
+  text-decoration: underline;
+}
